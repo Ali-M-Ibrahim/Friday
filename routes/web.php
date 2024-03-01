@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\FirstController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,3 +16,80 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('route1',function(){
+    return "Hello class";
+});
+
+Route::get('route2',function(){
+   return 10;
+});
+
+Route::get('route3',function(){
+    return true;
+});
+
+Route::get('route4',function (){
+   return response()->json(["name"=>"ali","age"=>'28']);
+});
+
+Route::get('route5',function(){
+    return "Hello class, my id is:" . 201310171;
+});
+
+
+Route::get('route6',function(){
+     $a=10;
+        $b = 20;
+
+    return "the sum is:"  . $a + $b;
+});
+
+Route::get('route7',function(){
+    $a=10;
+    $b = 20;
+     $c =  $a + $b;
+    return "the sum is:"  . $c ;
+});
+
+
+Route::get('route8',function (){
+  return response()->json(["data"=>"hello"])
+  ->header('content-type',"application/json")
+      ->header('secret',"1234")
+      ->header('test',"1234");
+});
+
+Route::get('route9',function (){
+    return response()->json(["data"=>"hello","first"=>"1243"])
+        ->withHeaders([
+            'secret'=>"123",
+            "secret2"=>"123455"
+        ]);
+});
+
+Route::get('route10/{id}',function ($id){
+    return "Hello, the value is" . $id;
+});
+
+Route::get('route11/{id}/{name}',function ($id,$name){
+    return "Hello, the value is: " . $id . " and the name is: " .$name;
+});
+
+
+Route::get('route12/{id?}',function ($id=0){
+    return "Hello, the value is" . $id;
+});
+
+Route::get('route-13',function(){
+    return "Hello class";
+})->name("my-route");
+
+
+Route::get('route14','App\Http\Controllers\FirstController@index');
+Route::get('route15',[FirstController::class,'create'])->name('test');
+Route::get('route16',[
+    'uses'=>'App\Http\Controllers\FirstController@index',
+    'as'=>"name"
+]);
+//return response()->json(["data"=>"hello","first"=>"1243"])
