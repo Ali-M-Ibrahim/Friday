@@ -2,6 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FirstController;
+use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\ApiController;
+use App\Http\Controllers\InvokableController;
+use App\Http\Controllers\Resource2Controller;
+use App\Http\Controllers\Resource3Controller;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -93,3 +99,23 @@ Route::get('route16',[
     'as'=>"name"
 ]);
 //return response()->json(["data"=>"hello","first"=>"1243"])
+
+
+Route::resource('myurl',ResourceController::class);
+Route::resource('myurl2',Resource2Controller::class);
+
+Route::apiResource('apiUrl',ApiController::class);
+Route::get('invoke',InvokableController::class);
+
+//Route::resources([
+//    'myurl'=>ResourceController::class,
+//    'myurl2'=>Resource2Controller::class,
+//]);
+
+
+
+Route::resource('mytest',Resource3Controller::class)->only(['index','create']);
+Route::resource('mytest2',Resource3Controller::class)->except(['index']);
+
+
+
