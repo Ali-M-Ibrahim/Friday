@@ -112,8 +112,6 @@ Route::get('invoke',InvokableController::class);
 //    'myurl2'=>Resource2Controller::class,
 //]);
 
-
-
 Route::resource('mytest',Resource3Controller::class)->only(['index','create']);
 Route::resource('mytest2',Resource3Controller::class)->except(['index']);
 
