@@ -13,10 +13,9 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('name')->nullable();
             $table->longText('description')->nullable();
-            $table->longText('description')->default("hello");
-            $table->boolean("is_admin")->default(0);
+            $table->boolean('in_stock')->nullable();
             $table->timestamps();
         });
     }

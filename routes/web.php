@@ -7,6 +7,7 @@ use App\Http\Controllers\ApiController;
 use App\Http\Controllers\InvokableController;
 use App\Http\Controllers\Resource2Controller;
 use App\Http\Controllers\Resource3Controller;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -116,4 +117,9 @@ Route::resource('mytest',Resource3Controller::class)->only(['index','create']);
 Route::resource('mytest2',Resource3Controller::class)->except(['index']);
 
 
+
+Route::get('create-product',[ProductController::class,'create1']);
+Route::get('create-product/{name}/{description}/{flag}',[ProductController::class,'create2']);
+Route::post('create-product',[ProductController::class,'create5']);
+Route::get('create-product-2',[ProductController::class,'create4']);
 
