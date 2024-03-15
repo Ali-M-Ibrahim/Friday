@@ -8,6 +8,7 @@ use App\Http\Controllers\InvokableController;
 use App\Http\Controllers\Resource2Controller;
 use App\Http\Controllers\Resource3Controller;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -123,3 +124,10 @@ Route::get('create-product/{name}/{description}/{flag}',[ProductController::clas
 Route::post('create-product',[ProductController::class,'create5']);
 Route::get('create-product-2',[ProductController::class,'create4']);
 
+Route::get('hello',[CategoryController::class, 'test']);
+Route::get('retrieve',[CategoryController::class, 'retrieve']);
+Route::get('getByCondition',[CategoryController::class, 'getByCondition']);
+Route::get('updateById/{id}',[CategoryController::class, 'updateById']);
+Route::get('updateMass',[CategoryController::class, 'updateMass']);
+Route::get('deleteById/{id}',[CategoryController::class, 'deleteById']);
+Route::get('deleteMass',[CategoryController::class, 'deleteMass']);
