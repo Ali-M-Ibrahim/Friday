@@ -131,3 +131,4 @@ Route::get('updateById/{id}',[CategoryController::class, 'updateById']);
 Route::get('updateMass',[CategoryController::class, 'updateMass']);
 Route::get('deleteById/{id}',[CategoryController::class, 'deleteById']);
 Route::get('deleteMass',[CategoryController::class, 'deleteMass']);
+Route::get('getData',[CategoryController::class, 'testmodels']);

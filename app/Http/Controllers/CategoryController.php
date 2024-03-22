@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\credentials;
+use App\Models\customer;
+use App\Models\service;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -46,5 +49,33 @@ class CategoryController extends Controller
     public function deleteMass(){
         Category::where('name','test')->delete();
     }
+
+    public function testmodels(){
+
+        $obk = customer::find(1);
+        $cred = $obk->getCredentials;
+
+        $accounts = $obk->getAccounts;
+
+        $related_services = $obk->getServices;
+
+
+
+//        $obj = credentials::find(1);
+//        $cust = $obj->getCustomer;
+//        return $cust;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
