@@ -76,6 +76,9 @@ class CategoryController extends Controller
 
 
 
+    public function site(){
+        return view('first');
+    }
 
 }
 
