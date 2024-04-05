@@ -28,7 +28,7 @@ body, html {
     margin: 0 0 20px;
 }
 
-.signup-form input {
+.signup-form input,textarea,select {
     width: calc(100% - 24px);
     height: 40px;
     margin-bottom: 20px;
@@ -57,4 +57,20 @@ margin-left: -10px;
 
 .signup-form button:hover {
     background-color: #0056b3;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
 }

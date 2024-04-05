@@ -9,7 +9,9 @@ use App\Http\Controllers\Resource2Controller;
 use App\Http\Controllers\Resource3Controller;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
-
+use App\Http\Controllers\WebsiteController;
+use App\Http\Controllers\TypeController;
+use App\Http\Controllers\ShopController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -133,3 +135,15 @@ Route::get('deleteById/{id}',[CategoryController::class, 'deleteById']);
 Route::get('deleteMass',[CategoryController::class, 'deleteMass']);
 Route::get('getData',[CategoryController::class, 'testmodels']);
 Route::get('/',[CategoryController::class, 'site']);
+Route::get('/firstpage',[WebsiteController::class,'index']);
+Route::get('/second',[WebsiteController::class,'second']);
+Route::resource('type',TypeController::class);
+Route::post('postData22',[WebsiteController::class,'post'])->name('postDataName');
+Route::get('/deletetype/{id}',[TypeController::class,'destroy'])->name('deleteType');
+Route::get('/create-shop',[ShopController::class,'create'])->name('create-shop');
+Route::post('store-shop',[ShopController::class,'store'])->name('store-shop');
+Route::get('list-shop',[ShopController::class,'index'])->name('list-shop');
+Route::get('delete-shop/{id}',[ShopController::class,'destroy'])->name('delete-shop');
+Route::get('edit-shop/{id}',[ShopController::class,'edit'])->name('edit-shop');
+Route::get('update-shop/{id}',[ShopController::class,'update'])->name('edit-shop');
+
