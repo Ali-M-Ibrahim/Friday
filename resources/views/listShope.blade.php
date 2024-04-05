@@ -23,6 +23,7 @@
                     <td>{{$obj->getType->name}}</td>
                     <td>
                         <a href="{{route('delete-shop',['id'=>$obj->id])}}" >delete</a>
+                        <a href="{{route('edit-shop',['id'=>$obj->id])}}" >edit</a>
                     </td>
                 </tr>
             @endforeach
