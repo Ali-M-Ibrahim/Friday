@@ -11,7 +11,7 @@ class ShopController extends Controller
 
     public function __construct()
     {
-        $this->middleware('checktoken');
+//        $this->middleware('checktoken');
     }
 
     public function create()
@@ -29,6 +29,15 @@ class ShopController extends Controller
 
     public function store(Request $request)
     {
+
+        $request->validate([
+            'shopname'=>'required|min:3|max:10',
+            'shoplocation'=>'required',
+            'shoptype'=>'required'
+        ],[
+            'required'=>"this is my custom message"
+        ]);
+
         $obj = new Shop();
         $obj->name = $request->shopname;
         $obj->location = $request->shoplocation;

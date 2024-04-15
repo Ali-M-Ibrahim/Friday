@@ -7,6 +7,11 @@
     @yield('title')
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     @yield('customcss')
+    <style>
+        .alert-danger{
+            color:red;
+        }
+    </style>
 </head>
 
 <body>
