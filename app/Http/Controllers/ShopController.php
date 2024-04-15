@@ -8,11 +8,24 @@ use Illuminate\Http\Request;
 
 class ShopController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('checktoken');
+    }
+
     public function create()
     {
         $all = Type::all();
         return view('addShop')->with('types',$all);
     }
+
+    public function create2()
+    {
+        $all = Type::all();
+        return response()->json(["data"=>$all]);
+    }
+
 
     public function store(Request $request)
     {

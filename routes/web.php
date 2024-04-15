@@ -146,4 +146,8 @@ Route::get('list-shop',[ShopController::class,'index'])->name('list-shop');
 Route::get('delete-shop/{id}',[ShopController::class,'destroy'])->name('delete-shop');
 Route::get('edit-shop/{id}',[ShopController::class,'edit'])->name('edit-shop');
 Route::post('update-shop/{id}',[ShopController::class,'update'])->name('update-shop');
+Route::get('get-types',[ShopController::class,'create2'])
+    ->name('get-types')
+    ->middleware('checktoken')
+;
 
