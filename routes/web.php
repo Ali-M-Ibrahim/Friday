@@ -12,6 +12,9 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\ShopController;
+use App\Http\Controllers\ImageController;
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -150,4 +153,14 @@ Route::get('get-types',[ShopController::class,'create2'])
     ->name('get-types')
     ->middleware('checktoken')
 ;
+
+
+Route::get('image',[ImageController::class,'index']);
+Route::post('image',[ImageController::class,'method1'])->name('method1');
+Route::get('display',[ImageController::class,'display'])->name('display');
+Route::post('image2',[ImageController::class,'method2'])->name('method2');
+Route::post('image3',[ImageController::class,'method3'])->name('method3');
+
+
+
 
