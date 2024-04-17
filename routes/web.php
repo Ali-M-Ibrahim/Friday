@@ -13,7 +13,7 @@ use App\Http\Controllers\WebsiteController;
 use App\Http\Controllers\TypeController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\ImageController;
-
+use App\Http\Controllers\DIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -160,6 +160,14 @@ Route::post('image',[ImageController::class,'method1'])->name('method1');
 Route::get('display',[ImageController::class,'display'])->name('display');
 Route::post('image2',[ImageController::class,'method2'])->name('method2');
 Route::post('image3',[ImageController::class,'method3'])->name('method3');
+
+
+Route::get('DI1',[DIController::class,'f1'])->name('f1');
+Route::get('DI2',[DIController::class,'f2'])->name('f2');
+Route::get('DI3',[DIController::class,'f4'])->name('f4');
+
+
+
 
 
 
