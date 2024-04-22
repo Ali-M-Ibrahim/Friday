@@ -167,7 +167,7 @@ Route::get('DI2',[DIController::class,'f2'])->name('f2');
 Route::get('DI3',[DIController::class,'f4'])->name('f4');
 
 
-
+Route::post('/mytest',[WebsiteController::class,'mytest']);
 
 
 

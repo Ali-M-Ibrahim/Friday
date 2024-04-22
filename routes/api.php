@@ -2,7 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\WebsiteController;
+use App\Http\Controllers\API2Controller;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +18,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/mytest',[WebsiteController::class,'mytest']);
+Route::apiResource('student',API2Controller::class);

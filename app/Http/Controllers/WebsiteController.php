@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+
+use App\Traits\ApiResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class WebsiteController extends Controller
 {
+    use ApiResponse;
     public function index(){
         $object = Product::find(1);
         $object2="hello";
@@ -39,6 +42,11 @@ class WebsiteController extends Controller
 
     public function post(Request $request){
         return "I am post function";
+    }
+
+
+    public function mytest(){
+        return $this->ErrorResponse("this is the susccess messafge");
     }
 
 }
